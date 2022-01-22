@@ -1,0 +1,15 @@
+/* eslint-disable prettier/prettier */
+import { Category } from "../models/Category";
+
+interface ICreateCategoryDTO {
+    name: string,
+    description: string
+}
+
+interface ICategoriesRepository {
+    findByName(name: string): Category
+    list(): Category[];
+    create({ name, description }: ICreateCategoryDTO): void;
+}
+
+export { ICategoriesRepository, ICreateCategoryDTO }
